@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'RainbowRegular';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Briany-Regular.otf') format('opentype');
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+.chakra-popover__popper {
+  display: flex;
+  justify-content: flex-end;
+}
+.container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.containerDesktop {
+  overflow-x: auto;
+}
+
+.containerDesktop {
+  padding-bottom: 6px;
+}
+
+.containerDesktop::-webkit-scrollbar {
+  border: 0px;
+}
+
+.containerDesktop::-webkit-scrollbar-thumb {
+  background: rgba(0, 172, 237, 0.2);
+  border-radius: 20px;
+}
+
+.containerCategories {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.containerCategories::-webkit-scrollbar {
+  display: none;
+}

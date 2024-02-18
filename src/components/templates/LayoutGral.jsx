@@ -1,4 +1,4 @@
-import { Footer, Header } from "@/components/molecules";
+import { Footer, Header } from "@/components/organisms";
 import { Box } from "@chakra-ui/react";
 
 import { Outlet } from "react-router-dom";
