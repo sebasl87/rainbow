@@ -45,7 +45,7 @@ export const Header = () => {
         >
           <Image
             data-testid="logoImage"
-            src="/RainbowLogoChico.png"
+            src="/RainbowLogo.png"
             alt="logo"
             w={{ lg: 20 }}
             onClick={() => navigate("/")}
@@ -96,7 +96,7 @@ export const Header = () => {
           >
             <Image
               data-testid="logoImageMobile"
-              src="/RainbowLogoChico.png"
+              src="/RainbowLogo.png"
               alt="logoMobile"
               w={{ base: "32px", md: "146px" }}
               onClick={() => navigate("/")}

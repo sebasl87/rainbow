@@ -8,10 +8,11 @@ export const LayoutGral = () => {
     <>
       <Header />
       <Box
+      width="100vw"
         mt={{
           base: "64px",
           md: "80px",
-          lg: "88px",
+          lg:32,
         }}
       >
         <Outlet />

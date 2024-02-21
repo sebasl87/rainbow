@@ -4,17 +4,18 @@ import { Box, Divider, Image } from '@chakra-ui/react';
 import { useNavigate } from "react-router-dom";
 
 export const Footer = () => {
-  const navigation = useNavigate();
+  const navigate = useNavigate();
   return (
     <Box
-      bg="blue"
+      bg="snow"
       display="flex"
-      w="100%"
       flexDirection="column"
+      w="100%"
+      position="fixed"
       py={{ base: '24px', md: '32px', lg: '24px' }}
       px={{ base: '16px', md: '24px' }}
       alignItems="center"
-      borderTop="8px solid #00ACED">
+      borderTop="8px solid #c2cec9">
       <Box
         display="flex"
         w="100%"
@@ -26,7 +27,7 @@ export const Footer = () => {
           justifyContent={{ base: 'center', md: 'space-between' }}
           display="flex"
           mb={{ base: '24px', md: '0px' }}>
-          <Image src="/danoneWhiteLogo.png" alt="whiteLogo" width="220px" />
+          <Image src="/RainbowLogo.png" alt="whiteLogo" width="220px" />
         </Box>
         <Box
           display="flex"
@@ -40,11 +41,11 @@ export const Footer = () => {
             justifyContent="space-between">
             <LinkFooter
               buttonText="Términos y condiciones"
-              handleClick={() => navigation('/terminosycondiciones')}
+              handleClick={() => navigate('/terminosycondiciones')}
             />
             <LinkFooter
               buttonText="Aviso Legal"
-              handleClick={() => navigation('/aviso-de-privacidad')}
+              handleClick={() => navigate('/aviso-de-privacidad')}
             />
           </Box>
           <Box
@@ -53,11 +54,11 @@ export const Footer = () => {
             justifyContent="space-between">
             <LinkFooter
               buttonText="Contáctanos"
-              handleClick={() => navigation('/contacto')}
+              handleClick={() => navigate('/contacto')}
             />
             <LinkFooter
               buttonText="Preguntas Frecuentes"
-              handleClick={() => navigation('/preguntas-frecuentes')}
+              handleClick={() => navigate('/preguntas-frecuentes')}
             />
           </Box>
         </Box>
@@ -76,7 +77,7 @@ export const Footer = () => {
           width="100%"
           display="flex"
           justifyContent="center"
-          color="white"
+          color="rainbowGreen"
           fontSize={{ base: '12px', md: '14px' }}
           fontWeight={400}
           mt={{ base: '16px', md: '0px' }}>

@@ -4,7 +4,7 @@ export const LinkFooter = ({ buttonText, handleClick }) => {
   return (
     <Box
       onClick={handleClick}
-      color="white"
+      color="rainbowGreen"
       _hover={{ textDecoration: "underline" }}
       _active={{ color: "white" }}
       fontSize={{ base: "12px", md: "14px" }}
