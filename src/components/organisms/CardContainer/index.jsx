@@ -12,6 +12,7 @@ const CardContainer = () => {
 
   const [cards, setCards] = useState([]);
   const containerRef = useRef(null);
+  const cardRefs = useRef([]);
 
   const updateCards = (event) => {
     for (const card of cards) {
@@ -51,9 +52,29 @@ const CardContainer = () => {
     updateCards(event);
   };
 
+  // useEffect(() => {
+  //   // Initial setup
+  //   setCards(document.querySelectorAll(".card"));
+  //   containerRef.current.style.setProperty("--gap", config.gap);
+  //   containerRef.current.style.setProperty("--blur", config.blur);
+  //   containerRef.current.style.setProperty("--spread", config.spread);
+  //   containerRef.current.style.setProperty(
+  //     "--direction",
+  //     config.vertical ? "column" : "row"
+  //   );
+
+  //   // Event listeners
+  //   document.body.addEventListener("pointermove", handleMouseMove);
+
+  //   // Cleanup
+  //   return () => {
+  //     document.body.removeEventListener("pointermove", handleMouseMove);
+  //   };
+  // }, [config, cards]);
+
   useEffect(() => {
     // Initial setup
-    setCards(document.querySelectorAll(".card"));
+    setCards(cardRefs.current);
     containerRef.current.style.setProperty("--gap", config.gap);
     containerRef.current.style.setProperty("--blur", config.blur);
     containerRef.current.style.setProperty("--spread", config.spread);
@@ -69,7 +90,7 @@ const CardContainer = () => {
     return () => {
       document.body.removeEventListener("pointermove", handleMouseMove);
     };
-  }, [config]);
+  }, [config, cards]);
 
   return (
     <div
@@ -86,9 +107,15 @@ const CardContainer = () => {
         position: "relative",
         padding: "2rem",
         touchAction: "none",
+        width: "100%",
       }}
     >
-      <article className="card">
+      {Array.from({ length: 6 }).map((_, index) => (
+        <article key={index} ref={(el) => (cardRefs.current[index] = el)} className="card">
+          <div className="glows"></div>
+        </article>
+      ))}
+      {/* <article className="card">
         <div className="glows"></div>
       </article>
       <article className="card">
@@ -96,7 +123,7 @@ const CardContainer = () => {
       </article>
       <article className="card">
         <div className="glows"></div>
-      </article>
+      </article> */}
     </div>
   );
 };
