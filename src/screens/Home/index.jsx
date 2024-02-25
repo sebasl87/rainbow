@@ -1,5 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import { FlashBar } from "@/components/molecules";
+import CardContainer from "../../components/organisms/CardContainer";
 
 export const Home = () => {
   return (
@@ -10,9 +11,8 @@ export const Home = () => {
       alignItems="center"
       px={{ base: 4, md: 6 }}
     >
-      <Box w="100%" >
-        <FlashBar />
-      </Box>
+      <FlashBar />
+      <CardContainer />
     </Box>
   );
 };
