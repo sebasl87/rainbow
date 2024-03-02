@@ -1,21 +1,14 @@
-import {
-  Stack,
-  HStack,
-  Link,
-  Divider,
-  Image,
-  IconButton,
-} from "@chakra-ui/react";
-// Here we have used react-icons package for the icons
+import { Stack, HStack, Link, Image, IconButton, Text } from "@chakra-ui/react";
+
 import { FaInstagram } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const links = ["Escribinos"];
 const accounts = [
   {
-    url: "https://github.com/MA-Ahmad/templateskart",
-    label: "Github Account",
-    type: "gray",
+    url: "https://www.instagram.com/rainbowboutique2023/",
+    label: "Instagram",
+
     icon: <FaInstagram />,
   },
 ];
@@ -37,25 +30,25 @@ export const Footer = () => {
         data-testid="logoImage"
         src="/RainbowLogo.png"
         alt="logo"
-        w={{ lg: 20 }}
+        w={20}
         onClick={() => navigate("/")}
         cursor="pointer"
       />
 
-      {/* Desktop Screen */}
       <HStack spacing={4} alignItems="center" d={{ base: "none", md: "flex" }}>
         {links.map((link, index) => (
-          <CustomLink key={index}>{link}</CustomLink>
+          <Text
+            key={index}
+            fontSize={16}
+            cursor="pointer"
+            fontFamily="RainbowRegular"
+            _hover={{ color: "rainbowGreen" }}
+            onClick={() => navigate("/")}
+          >
+            {link}
+          </Text>
         ))}
       </HStack>
-
-      {/* Mobile and Tablet Screens */}
-      <Stack d={{ base: "flex", md: "none" }} alignItems="center">
-        <HStack alignItems="center">
-          <CustomLink>Escribinos</CustomLink>
-          <Divider h="1rem" orientation="vertical" />
-        </HStack>
-      </Stack>
 
       <Stack
         direction="row"
@@ -77,19 +70,6 @@ export const Footer = () => {
         ))}
       </Stack>
     </Stack>
-  );
-};
-
-const CustomLink = ({ children, ...props }) => {
-  return (
-    <Link
-      href="#"
-      fontSize="sm"
-      _hover={{ textDecoration: "underline" }}
-      {...props}
-    >
-      {children}
-    </Link>
   );
 };
 
