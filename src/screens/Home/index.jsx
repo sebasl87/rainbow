@@ -13,6 +13,8 @@ export const Home = () => {
     >
       <FlashBar />
       <CardContainer />
+      <FlashBar />
+
     </Box>
   );
 };

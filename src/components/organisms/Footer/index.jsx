@@ -1,90 +1,95 @@
-import { LinkFooter } from '@/components/atoms';
-import { Box, Divider, Image } from '@chakra-ui/react';
-
+import {
+  Stack,
+  HStack,
+  Link,
+  Divider,
+  Image,
+  IconButton,
+} from "@chakra-ui/react";
+// Here we have used react-icons package for the icons
+import { FaInstagram } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+
+const links = ["Escribinos"];
+const accounts = [
+  {
+    url: "https://github.com/MA-Ahmad/templateskart",
+    label: "Github Account",
+    type: "gray",
+    icon: <FaInstagram />,
+  },
+];
 
 export const Footer = () => {
   const navigate = useNavigate();
+
   return (
-    <Box
-      bg="snow"
-      display="flex"
-      flexDirection="column"
-      w="100%"
-      position="fixed"
-      py={{ base: '24px', md: '32px', lg: '24px' }}
-      px={{ base: '16px', md: '24px' }}
+    <Stack
+      maxW="5xl"
+      marginInline="auto"
+      p={8}
+      spacing={{ base: 8, md: 0 }}
+      justifyContent="space-between"
       alignItems="center"
-      borderTop="8px solid #c2cec9">
-      <Box
-        display="flex"
-        w="100%"
-        maxW="1200px"
-        justifyContent={{ base: 'center', md: 'space-between' }}
-        flexDirection={{ base: 'column', md: 'row' }}>
-        <Box
-          width={{ base: '100%', md: 'fit-content' }}
-          justifyContent={{ base: 'center', md: 'space-between' }}
-          display="flex"
-          mb={{ base: '24px', md: '0px' }}>
-          <Image src="/RainbowLogo.png" alt="whiteLogo" width="220px" />
-        </Box>
-        <Box
-          display="flex"
-          flexDirection={{ base: 'column', md: 'row' }}
-          width={{ base: '100%', md: 'fit-content' }}
-          alignItems={{ base: 'center', md: 'strech' }}>
-          <Box
-            mr={{ base: '0px', md: '123px' }}
-            display="flex"
-            flexDirection="column"
-            justifyContent="space-between">
-            <LinkFooter
-              buttonText="Términos y condiciones"
-              handleClick={() => navigate('/terminosycondiciones')}
-            />
-            <LinkFooter
-              buttonText="Aviso Legal"
-              handleClick={() => navigate('/aviso-de-privacidad')}
-            />
-          </Box>
-          <Box
-            display="flex"
-            flexDirection="column"
-            justifyContent="space-between">
-            <LinkFooter
-              buttonText="Contáctanos"
-              handleClick={() => navigate('/contacto')}
-            />
-            <LinkFooter
-              buttonText="Preguntas Frecuentes"
-              handleClick={() => navigate('/preguntas-frecuentes')}
-            />
-          </Box>
-        </Box>
-      </Box>
-      <Box
-        display="flex"
-        w="100%"
-        maxW="1200px"
-        justifyContent={{ base: 'center', md: 'space-between' }}
-        flexDirection="column">
-        <Divider
-          mt={{ base: '0px', md: '24px', lg: '20px' }}
-          mb={{ base: '0px', md: '24px', lg: '20px' }}
-        />
-        <Box
-          width="100%"
-          display="flex"
-          justifyContent="center"
-          color="rainbowGreen"
-          fontSize={{ base: '12px', md: '14px' }}
-          fontWeight={400}
-          mt={{ base: '16px', md: '0px' }}>
-          © 2024 Custom-xs. Todos los Derechos Reservados.
-        </Box>
-      </Box>
-    </Box>
+      direction={{ base: "column", md: "row" }}
+    >
+      <Image
+        data-testid="logoImage"
+        src="/RainbowLogo.png"
+        alt="logo"
+        w={{ lg: 20 }}
+        onClick={() => navigate("/")}
+        cursor="pointer"
+      />
+
+      {/* Desktop Screen */}
+      <HStack spacing={4} alignItems="center" d={{ base: "none", md: "flex" }}>
+        {links.map((link, index) => (
+          <CustomLink key={index}>{link}</CustomLink>
+        ))}
+      </HStack>
+
+      {/* Mobile and Tablet Screens */}
+      <Stack d={{ base: "flex", md: "none" }} alignItems="center">
+        <HStack alignItems="center">
+          <CustomLink>Escribinos</CustomLink>
+          <Divider h="1rem" orientation="vertical" />
+        </HStack>
+      </Stack>
+
+      <Stack
+        direction="row"
+        spacing={5}
+        pt={{ base: 4, md: 0 }}
+        alignItems="center"
+      >
+        {accounts.map((sc, index) => (
+          <IconButton
+            key={index}
+            as={Link}
+            isExternal
+            href={sc.url}
+            aria-label={sc.label}
+            colorScheme={sc.type}
+            icon={sc.icon}
+            rounded="md"
+          />
+        ))}
+      </Stack>
+    </Stack>
+  );
+};
+
+const CustomLink = ({ children, ...props }) => {
+  return (
+    <Link
+      href="#"
+      fontSize="sm"
+      _hover={{ textDecoration: "underline" }}
+      {...props}
+    >
+      {children}
+    </Link>
   );
 };
 

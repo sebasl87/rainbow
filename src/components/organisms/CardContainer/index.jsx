@@ -1,4 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import { ArticleContainer } from "../../molecules";
+import { Button } from "@chakra-ui/react";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 const CardContainer = () => {
   const config = {
@@ -52,26 +55,6 @@ const CardContainer = () => {
     updateCards(event);
   };
 
-  // useEffect(() => {
-  //   // Initial setup
-  //   setCards(document.querySelectorAll(".card"));
-  //   containerRef.current.style.setProperty("--gap", config.gap);
-  //   containerRef.current.style.setProperty("--blur", config.blur);
-  //   containerRef.current.style.setProperty("--spread", config.spread);
-  //   containerRef.current.style.setProperty(
-  //     "--direction",
-  //     config.vertical ? "column" : "row"
-  //   );
-
-  //   // Event listeners
-  //   document.body.addEventListener("pointermove", handleMouseMove);
-
-  //   // Cleanup
-  //   return () => {
-  //     document.body.removeEventListener("pointermove", handleMouseMove);
-  //   };
-  // }, [config, cards]);
-
   useEffect(() => {
     // Initial setup
     setCards(cardRefs.current);
@@ -93,38 +76,38 @@ const CardContainer = () => {
   }, [config, cards]);
 
   return (
-    <div
-      className="container"
-      ref={containerRef}
-      style={{
-        display: "flex",
-        flexWrap: "wrap",
-        flexDirection: config.vertical ? "column" : "row",
-        gap: `${config.gap}px`,
-        margin: "0 auto",
-        justifyContent: "center",
-        placeItems: "center",
-        position: "relative",
-        padding: "2rem",
-        touchAction: "none",
-        width: "100%",
-      }}
-    >
-      {Array.from({ length: 6 }).map((_, index) => (
-        <article key={index} ref={(el) => (cardRefs.current[index] = el)} className="card">
-          <div className="glows"></div>
-        </article>
-      ))}
-      {/* <article className="card">
-        <div className="glows"></div>
-      </article>
-      <article className="card">
-        <div className="glows"></div>
-      </article>
-      <article className="card">
-        <div className="glows"></div>
-      </article> */}
-    </div>
+    <>
+      <div
+        className="container"
+        ref={containerRef}
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          flexDirection: config.vertical ? "column" : "row",
+          gap: `${config.gap}px`,
+          margin: "0 auto",
+          justifyContent: "center",
+          placeItems: "center",
+          position: "relative",
+          padding: "2rem",
+          touchAction: "none",
+          width: "100%",
+          background: "snow",
+        }}
+      >
+        {Array.from({ length: 10 }).map((_, index) => (
+          <ArticleContainer key={index} index={index} cardRefs={cardRefs} />
+        ))}
+      </div>
+
+      <Button
+        rightIcon={<ArrowForwardIcon />}
+        colorScheme="teal"
+        variant="outline"
+      >
+        Ver todos
+      </Button>
+    </>
   );
 };
 

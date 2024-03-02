@@ -47,23 +47,15 @@ body {
   color: var(--color);
 }
 
-/* #card {
+.card {
   height: 100%;
-  background: var(--card);
-  padding: 2rem;
-  aspect-ratio: 330 / 400;
-  border-radius: var(--border-radius);
-  min-width: 280px;
-  max-width: 280px;
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  position: relative;
+  align-items: center;
 }
 
 #card:hover {
   z-index: 2;
-} */
+}
 
 .container {
   --spread: 60;
@@ -84,7 +76,7 @@ article {
   --active: 0.15;
   --start: 0;
   height: 100%;
-  background: var(--card);
+  background: #c2cec9;
   padding: 2rem;
   aspect-ratio: 330 / 400;
   border-radius: var(--border-radius);
@@ -185,4 +177,3 @@ article::after {
   mask-clip: padding-box, border-box;
   mask-composite: intersect;
 }
-
