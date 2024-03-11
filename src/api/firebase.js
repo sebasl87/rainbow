@@ -1,9 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
-import { getFunctions } from "firebase/functions";
-import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,
@@ -18,19 +14,19 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const database = getDatabase(app);
-const functions = getFunctions(app);
 const dbFirestore = getFirestore(app);
-const storage = getStorage(app);
 
-// if (!import.meta.env.NODE_ENV || import.meta.env.NODE_ENV === 'development') {
-//   self.FIREBASE_APPCHECK_DEBUG_TOKEN =
-//     import.meta.env.VITE_FIREBASE_APPCHECK_DEBUG_TOKEN;
-// }
+export { app, dbFirestore };
 
-export default app;
+/**
+ * RULES de firestore:
+ * rules_version = '2';
 
-export { auth, database, functions, dbFirestore, storage };
-
-
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+ */
