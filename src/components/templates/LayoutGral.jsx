@@ -8,11 +8,13 @@ export const LayoutGral = () => {
     <>
       <Header />
       <Box
-      width="100vw"
+        width="100%"
+        display="flex"
+        flex-direction="column"
         mt={{
-          base: "64px",
-          md: "80px",
-          lg:32,
+          base: "134px",
+          md: "154px",
+          lg: 32,
         }}
       >
         <Outlet />

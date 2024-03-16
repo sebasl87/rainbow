@@ -77,7 +77,7 @@ article {
   --start: 0;
   height: 100%;
   background: #c2cec9;
-  padding: 2rem;
+  padding: 2rem 2rem 0.7rem 2rem;
   aspect-ratio: 330 / 400;
   border-radius: var(--border-radius);
   min-width: 280px;

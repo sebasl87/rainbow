@@ -42,7 +42,7 @@ export const Footer = () => {
             fontSize={16}
             cursor="pointer"
             fontFamily="RainbowRegular"
-            _hover={{ color: "rainbowGreen" }}
+            _hover={{ color: "#7A7C7B" }}
             onClick={() => navigate("/")}
           >
             {link}
@@ -66,6 +66,10 @@ export const Footer = () => {
             colorScheme={sc.type}
             icon={sc.icon}
             rounded="md"
+            _hover={{ color: "#7A7C7B" }}
+            fontSize="24px"
+            background="transparent"
+            color="1a202c"
           />
         ))}
       </Stack>

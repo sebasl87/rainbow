@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArticleContainer } from "../../molecules";
 import { Button } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { Box } from "@chakra-ui/react";
 
 const CardContainer = () => {
   const config = {
@@ -99,14 +100,25 @@ const CardContainer = () => {
           <ArticleContainer key={index} index={index} cardRefs={cardRefs} />
         ))}
       </div>
-
-      <Button
-        rightIcon={<ArrowForwardIcon />}
-        colorScheme="teal"
-        variant="outline"
-      >
-        Ver todos
-      </Button>
+      <Box display="flex" width="100%" justifyContent="center" bg="#FFFAFA">
+        <Button
+          rightIcon={<ArrowForwardIcon />}
+          size="md"
+          variant="outline"
+          bg="white"
+          color="#777978"
+          border="1px solid #C2CEC9"
+          _hover={{
+            color: "white",
+            background: "#777978",
+            border: 0,
+            opacity: 0.8,
+          }}
+          mb={6}
+        >
+          Ver todos
+        </Button>
+      </Box>
     </>
   );
 };

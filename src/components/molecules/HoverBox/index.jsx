@@ -12,6 +12,7 @@ export const HoverBox = () => {
       _hover={{ opacity: 1 }}
       w="100%"
       h="30%"
+      boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
     >
       <Center p={3} display="flex" flexDirection="column">
         <HStack spacing={2} mb={2}>
@@ -26,7 +27,21 @@ export const HoverBox = () => {
             </Tag>
           ))}
         </HStack>
-        <Button>Agregar a mi carrito</Button>
+        <Button
+          size="sm"
+          variant="outline"
+          bg="white"
+          color="#777978"
+          border="1px solid #C2CEC9"
+          _hover={{
+            color: "white",
+            background: "#777978",
+            border: 0,
+            opacity: 0.8,
+          }}
+        >
+          Agregar a mi carrito
+        </Button>
       </Center>
     </Box>
   );
