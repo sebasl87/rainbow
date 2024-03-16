@@ -9,7 +9,7 @@ const CardContainer = () => {
     proximity: 40,
     spread: 80,
     blur: 20,
-    gap: 32,
+    gap: 24,
     vertical: false,
     opacity: 0,
   };
@@ -90,13 +90,13 @@ const CardContainer = () => {
           justifyContent: "center",
           placeItems: "center",
           position: "relative",
-          padding: "2rem",
+          padding: "2rem 0 2rem 0",
           touchAction: "none",
           width: "100%",
           background: "snow",
         }}
       >
-        {Array.from({ length: 10 }).map((_, index) => (
+        {Array.from({ length: 12 }).map((_, index) => (
           <ArticleContainer key={index} index={index} cardRefs={cardRefs} />
         ))}
       </div>

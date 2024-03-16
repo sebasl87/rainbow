@@ -9,13 +9,7 @@ export const Home = () => {
   console.log(error, "error");
   console.log(data, "data");
   return (
-    <Box
-      display="flex"
-      flexDirection="column"
-      width="100%"
-      alignItems="center"
-      px={{ base: 4, md: 6 }}
-    >
+    <Box display="flex" flexDirection="column" width="100%" alignItems="center">
       <FlashBar />
       <CardContainer />
       <FlashBar />

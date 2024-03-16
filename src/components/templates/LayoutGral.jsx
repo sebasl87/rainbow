@@ -10,14 +10,21 @@ export const LayoutGral = () => {
       <Box
         width="100%"
         display="flex"
-        flex-direction="column"
         mt={{
           base: "134px",
           md: "154px",
           lg: 32,
         }}
       >
-        <Outlet />
+        <Box
+          width="100%"
+          display="flex"
+          justifyContent="center"
+          maxW="1248px"
+          mb="200px"
+        >
+          <Outlet />
+        </Box>
       </Box>
 
       <Footer />
