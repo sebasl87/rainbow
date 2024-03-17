@@ -24,9 +24,9 @@ export const DetailProductScreen = () => {
   return (
     <>
       <Box
-        // padding={{ base: 3, md: 6, lg: 9 }}
+        padding={{ base: 3, md: 6, lg: 9 }}
         display="flex"
-        width="100%"
+        width="100vw"
         flexDirection={{ base: "column", md: "row" }}
         mt={{ base: 6, md: 8, lg: 10 }}
         mb={{ base: 14, md: 50, lg: 29 }}
@@ -35,11 +35,11 @@ export const DetailProductScreen = () => {
         <ProductSlider images={imagesbb} isDiscount={false} discount="" />
 
         <ProductDetailsAddCartDescription
-          productTitle="jamon"
+          productTitle="Remera de algodón"
           isDiscount={false}
           discountValue=""
           currentValue={10}
-          productDescription="muchas cosas"
+          productDescription="<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem porro beatae possimus, totam veritatis consequuntur accusamus soluta voluptate quo, perferendis atque minus fuga neque eos. Expedita ipsam quae cumque quaerat.Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>Autem porro beatae possimus, totam veritatis consequuntur accusamus soluta voluptate quo, perferendis atque minus fuga neque eos. Expedita ipsam quae cumque quaerat."
         />
       </Box>
     </>

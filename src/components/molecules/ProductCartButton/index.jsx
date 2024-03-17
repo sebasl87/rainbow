@@ -26,7 +26,7 @@ export const ProductCartButton = () => {
               justifyContent="center"
               cursor="pointer"
               _hover={{ opacity: "0.8" }}
-              background="#005EB8"
+              background="#777978"
               color="#fff"
               borderTopLeftRadius={6}
               borderBottomLeftRadius={6}
@@ -40,8 +40,8 @@ export const ProductCartButton = () => {
               display="flex"
               alignItems="center"
               justifyContent="center"
-              borderTop="2px solid #005EB8"
-              borderBottom="2px solid #005EB8"
+              borderTop="2px solid #777978"
+              borderBottom="2px solid #777978"
               fontSize={{ md: 16 }}
               color="#1A202C"
             >
@@ -55,7 +55,7 @@ export const ProductCartButton = () => {
               justifyContent="center"
               cursor="pointer"
               _hover={{ opacity: "0.8" }}
-              background="#005EB8"
+              background="#777978"
               color="#fff"
               borderTopRightRadius={6}
               borderBottomRightRadius={6}

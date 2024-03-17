@@ -67,7 +67,7 @@ const ProductSlider = ({ images, isDiscount = true, discount = 20 }) => {
             border="none"
             _hover={{ padding: 0 }}
             _active={{ background: "transparent" }}
-            data-testid="previusImage"
+            _focus={{ border: "none", outline: "none", boxShadow: "none" }}
           />
           <IconButton
             aria-label="Next Image"
@@ -81,12 +81,12 @@ const ProductSlider = ({ images, isDiscount = true, discount = 20 }) => {
             variant="outline"
             _hover={{ padding: 0 }}
             _active={{ background: "transparent" }}
+            _focus={{ border: "none", outline: "none", boxShadow: "none" }}
             border="none"
-            data-testid="nextImage"
           />
         </Flex>
       </Box>
-      <Flex justifyContent="center" mt={2}>
+      <Flex justifyContent="center" mt={{ base: 2, md: 4 }}>
         {images.map((image, index) => (
           <Box
             key={image.position}
@@ -95,8 +95,9 @@ const ProductSlider = ({ images, isDiscount = true, discount = 20 }) => {
             bg="#fff"
             mx={2}
             borderWidth={1}
+            borderRadius={4}
             borderColor={
-              currentImageIndex === index ? "#002677" : "transparent"
+              currentImageIndex === index ? "#777978" : "transparent"
             }
             cursor="pointer"
             onClick={() => setCurrentImageIndex(index)}

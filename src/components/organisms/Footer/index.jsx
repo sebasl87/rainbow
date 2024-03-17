@@ -45,7 +45,7 @@ export const Footer = () => {
         spacing={{ base: 8, md: 0 }}
         justifyContent="space-between"
         alignItems="center"
-        direction={{ base: "column", md: "row" }}
+        direction={{ base: "row", md: "row" }}
       >
         <Image
           data-testid="logoImage"

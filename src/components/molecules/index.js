@@ -4,3 +4,5 @@ export * from "./FlashBar";
 export * from "./ProductSlider";
 export * from "./ArticleContainer";
 export * from "./ProductCartButton";
+export * from "./SizeSelector";
+export * from "./ColorSelector";
