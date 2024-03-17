@@ -11,7 +11,7 @@ export const Header = () => {
 
   const [searchText, setSearchText] = useState("");
 
-  const {  desktop } = useBreakpoints();
+  const { desktop } = useBreakpoints();
   const pressEnter = (e) => {
     if (e.key === "Enter") {
       searchText.length > 2 &&
@@ -64,10 +64,10 @@ export const Header = () => {
           </Box>
           <Box ml="64px" width="100%" maxW={108}>
             <Text
-            fontSize={16}
+              fontSize={16}
               cursor="pointer"
               fontFamily="RainbowRegular"
-              _hover={{ color: "rainbowGreen" }}
+              _hover={{ color: "#7A7C7B" }}
             >
               Escribinos...
             </Text>
@@ -98,7 +98,7 @@ export const Header = () => {
               data-testid="logoImageMobile"
               src="/RainbowLogo.png"
               alt="logoMobile"
-              w={{ base: "32px", md: "146px" }}
+              w={{ base: "32px", md: "60px" }}
               onClick={() => navigate("/")}
               cursor="pointer"
             />

@@ -2,13 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import { ArticleContainer } from "../../molecules";
 import { Button } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { Box } from "@chakra-ui/react";
 
 const CardContainer = () => {
   const config = {
     proximity: 40,
     spread: 80,
     blur: 20,
-    gap: 32,
+    gap: 24,
     vertical: false,
     opacity: 0,
   };
@@ -89,24 +90,35 @@ const CardContainer = () => {
           justifyContent: "center",
           placeItems: "center",
           position: "relative",
-          padding: "2rem",
+          padding: "2rem 0 2rem 0",
           touchAction: "none",
           width: "100%",
           background: "snow",
         }}
       >
-        {Array.from({ length: 10 }).map((_, index) => (
+        {Array.from({ length: 12 }).map((_, index) => (
           <ArticleContainer key={index} index={index} cardRefs={cardRefs} />
         ))}
       </div>
-
-      <Button
-        rightIcon={<ArrowForwardIcon />}
-        colorScheme="teal"
-        variant="outline"
-      >
-        Ver todos
-      </Button>
+      <Box display="flex" width="100%" justifyContent="center" bg="#FFFAFA">
+        <Button
+          rightIcon={<ArrowForwardIcon />}
+          size="md"
+          variant="outline"
+          bg="white"
+          color="#777978"
+          border="1px solid #C2CEC9"
+          _hover={{
+            color: "white",
+            background: "#777978",
+            border: 0,
+            opacity: 0.8,
+          }}
+          mb={6}
+        >
+          Ver todos
+        </Button>
+      </Box>
     </>
   );
 };

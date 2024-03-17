@@ -17,7 +17,7 @@ const data = {
 
 export const FlashBar = () => {
   return (
-    <Container maxW="1880px" p={{ base: 5, md: 10 }}>
+    <Container maxW="1880px" my={{ base: 5, md: 10 }} padding={0}>
       <Flex
         boxShadow={useColorModeValue(
           "0 4px 6px rgba(160, 174, 192, 0.6)",
