@@ -3,6 +3,8 @@ import { ArticleContainer } from "../../molecules";
 import { Button } from "@chakra-ui/react";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Box } from "@chakra-ui/react";
+import { useAtomValue } from "jotai";
+import { productsList } from "../../../jotai/atoms";
 
 const CardContainer = () => {
   const config = {
@@ -18,6 +20,7 @@ const CardContainer = () => {
   const containerRef = useRef(null);
   const cardRefs = useRef([]);
 
+  const products = useAtomValue(productsList);
   const updateCards = (event) => {
     for (const card of cards) {
       const cardBounds = card.getBoundingClientRect();
@@ -76,6 +79,7 @@ const CardContainer = () => {
     };
   }, [config, cards]);
 
+
   return (
     <>
       <div
@@ -96,8 +100,13 @@ const CardContainer = () => {
           background: "snow",
         }}
       >
-        {Array.from({ length: 12 }).map((_, index) => (
-          <ArticleContainer key={index} index={index} cardRefs={cardRefs} />
+        {products?.slice(0, 8).map((p, index) => (
+          <ArticleContainer
+            key={index}
+            index={index}
+            cardRefs={cardRefs}
+            product={p}
+          />
         ))}
       </div>
       <Box display="flex" width="100%" justifyContent="center" bg="#FFFAFA">

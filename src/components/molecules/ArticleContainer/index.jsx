@@ -2,9 +2,9 @@ import { Box, Card, Text } from "@chakra-ui/react";
 import HoverBox from "../HoverBox";
 import { formatNumberToCurrency } from "../../../utils/formatNumberToCurrency";
 
-export const ArticleContainer = ({ index, cardRefs }) => {
+export const ArticleContainer = ({ index, cardRefs, product }) => {
   return (
-    <Box borderRadius="12px">
+    <Box borderRadius="12px" backgroundImage={product.foto}>
       <article
         ref={(el) => (cardRefs.current[index] = el)}
         className="card"
@@ -13,9 +13,9 @@ export const ArticleContainer = ({ index, cardRefs }) => {
         <div className="glows"></div>
         <Card h="100%" w="100%" mb={2}></Card>
         <Text fontFamily="RainbowRegular">
-          {formatNumberToCurrency(123.9832)}
+          {formatNumberToCurrency(product.precio)}
         </Text>
-        <HoverBox />
+        <HoverBox product={product} />
       </article>
     </Box>
   );
