@@ -8,17 +8,21 @@ import { Provider } from "jotai";
 import { DevTools } from "jotai-devtools";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { ApolloProvider } from "@apollo/client";
+import Client from "./api/apollo/apollo";
 
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <Provider>
     <DevTools />
-    <ChakraProvider theme={theme}>
-      <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools initialIsOpen={false} />
-        <Routes />
-      </QueryClientProvider>
-    </ChakraProvider>
+    <ApolloProvider client={Client}>
+      <ChakraProvider theme={theme}>
+        <QueryClientProvider client={queryClient}>
+          <ReactQueryDevtools initialIsOpen={false} />
+          <Routes />
+        </QueryClientProvider>
+      </ChakraProvider>
+    </ApolloProvider>
   </Provider>
 );

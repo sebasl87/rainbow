@@ -1,7 +1,7 @@
 import { Box, Button, Center, Circle, HStack, Tag } from "@chakra-ui/react";
 
 export const HoverBox = ({ product }) => {
-  console.log(product, "PRODUCT");
+
   return (
     <Box
       bg="rainbowGreenLight"
@@ -17,12 +17,12 @@ export const HoverBox = ({ product }) => {
     >
       <Center p={3} display="flex" flexDirection="column">
         <HStack spacing={2} mb={2}>
-          {product.colores.map((color) => (
-            <Circle size={6} key={color} bg="red" />
+          {product.colors.map((color) => (
+            <Circle size={6} key={color.hex} bg={color.hex} />
           ))}
         </HStack>
         <HStack spacing={2} mb={2}>
-          {product.talles.map((size) => (
+          {product.sizes.map((size) => (
             <Tag size="sm" key={size} variant="solid" colorScheme="orange">
               {size}
             </Tag>
