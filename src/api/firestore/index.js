@@ -1,3 +1,4 @@
+/** DEPRECATED */
 import { collection, getDocs } from "firebase/firestore";
 import { dbFirestore } from "../firebase";
 

@@ -1,17 +1,19 @@
 import { Box, Spinner } from "@chakra-ui/react";
 import { FlashBar } from "@/components/molecules";
 import CardContainer from "../../components/organisms/CardContainer";
-import { useFirestore } from "../../hooks/useFirestore";
-import { useEffect } from "react";
+
 import { productsList } from "../../jotai/atoms";
 import { useSetAtom } from "jotai";
+import { useQuery } from "@apollo/client";
+import { GET_PRODUCTS } from "../../api/apollo/querys";
 
 export const Home = () => {
-  const { data, isLoading } = useFirestore();
   const setProductsList = useSetAtom(productsList);
-  useEffect(() => {
-    data && setProductsList(data);
-  }, [data]);
+  const { isLoading } = useQuery(GET_PRODUCTS, {
+    onCompleted: (data) => {
+      setProductsList(data.products);
+    },
+  });
 
   return (
     <Box display="flex" flexDirection="column" width="100%" alignItems="center">

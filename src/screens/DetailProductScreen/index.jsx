@@ -1,6 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import ProductSlider from "../../components/molecules/ProductSlider";
 import { ProductDetailsAddCartDescription } from "../../components/organisms";
+import ShadowRainbow from "../../components/templates/ShadowRainbow";
 
 const imagesbb = [
   {
@@ -32,7 +33,9 @@ export const DetailProductScreen = () => {
         mb={{ base: 14, md: 50, lg: 29 }}
         justifyContent={{ md: "space-around", lg: "space-between" }}
       >
-        <ProductSlider images={imagesbb} isDiscount={false} discount="" />
+        <ShadowRainbow>
+          <ProductSlider images={imagesbb} isDiscount={false} discount="" />
+        </ShadowRainbow>
 
         <ProductDetailsAddCartDescription
           productTitle="Remera de algodón"
